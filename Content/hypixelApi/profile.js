@@ -3,17 +3,17 @@
 
 function setLevel(){
 
-    levelFarming = membersInfo.experience_skill_farming;
-    levelMining = membersInfo.experience_skill_mining;
-    levelCombat = membersInfo.experience_skill_combat;
-    levelTaming = membersInfo.experience_skill_taming;
-    levelEnchanting = membersInfo.experience_skill_enchanting;
-    levelFishing = membersInfo.experience_skill_fishing;
-    levelForaging = membersInfo.experience_skill_foraging;
-    levelCarpentry = membersInfo.experience_skill_carpentry;
-    levelAlchemy = membersInfo.experience_skill_alchemy;
-    levelSocial = membersInfo.experience_skill_social2;
-    levelRunecrafting = membersInfo.experience_skill_runecrafting
+    levelFarming = membersInfo.player_data.experience.SKILL_FARMING;
+    levelMining = membersInfo.player_data.experience.SKILL_MINING;
+    levelCombat = membersInfo.player_data.experience.SKILL_COMBAT;
+    levelTaming = membersInfo.player_data.experience.SKILL_TAMING;
+    levelEnchanting = membersInfo.player_data.experience.SKILL_ENCHANTING;
+    levelFishing = membersInfo.player_data.experience.SKILL_FISHING;
+    levelForaging = membersInfo.player_data.experience.SKILL_FORAGING;
+    levelCarpentry = membersInfo.player_data.experience.SKILL_CARPENTRY;
+    levelAlchemy = membersInfo.player_data.experience.SKILL_ALCHEMY;
+    levelSocial = membersInfo.player_data.experience.SKILL_SOCIAL;
+    levelRunecrafting = membersInfo.player_data.experience.SKILL_RUNECRAFTING;
     console.log("initié")
     getAllLevel()
 }
