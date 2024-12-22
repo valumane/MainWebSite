@@ -1,7 +1,7 @@
 // Define the API URL
 const apikey = 'ee3192e7-902a-4bff-9bc1-2466ee0bd710'
 const uuid = 'aa3e247f-f9d2-418e-aadc-949c77aafc7d'
-const apiUrl = 'https://api.hypixel.net/skyblock/profiles?key='+apikey+'&uuid='+uuid;
+const apiUrl = 'https://api.hypixel.net/v2/skyblock/profiles?key='+apikey+'&uuid='+uuid;
 const Collection = 'https://api.hypixel.net/resources/skyblock/collections';
 
 
