@@ -1,0 +1,52 @@
+canvas{
+    padding-right: 20px;
+    padding-left: 20px
+}
+#graph{
+    width: 870px;
+    height: 450px;
+    border: 4px solid black;
+}
+#parametre{
+    float: right;
+    font-size: x-large;
+}
+#menu{
+    float: right;
+    display: none;
+    border: 2px solid black;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+#submenu{
+    margin: 10px;
+}
+#gn{
+    float: right;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 50%;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: auto;
+    background: white;
+    display: none
+}
+#gnchild{
+    margin: 20px;
+}
+#stop{
+    display: none;
+}
+#offanim{
+    display: none;
+}
+#onanim{
+    display: initial;
+}
+#onopelist{
+    display: none;
+}
+#opelist{
+    display: initial;
+}

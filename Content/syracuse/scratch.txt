@@ -1,0 +1,22 @@
+
+revoir le nmax
+
+
+ya un truc chelou, on dirait que pas mal de courbe se ressemble,
+prochain truc a faire, essayé de superposer les 100 1er courbes
+puis les 1000,
+puis les 10000,
+etc...
+
+ya peut etre des nombres ou on passe jamais, sauf quand on etudie ce nombre,
+genre des sortes de nombre oublié, c chelou
+j'crois ya aussi le meme systeme avec les nombres 1er, genre on peut pas les divisé par autre chose que eux meme
+bah la sa serait la meme
+on pourrait passé par eux sauf quand on les etudies...
+
+peut etre ya vraiment des nombre comme sa
+faut voir aussi pour un meilleur modele de graph
+genre celui avec plein de pts sans ligne, avec un cadrillage ou une couleur de fonds,
+pour reperé plus facilement c " nombre oublié de syracuse"
+en anglais sa ferait genre " syracuse ghost number"
+c stylé

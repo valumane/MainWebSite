@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>syracuse</title>
+
+    <script src="syracuse.js"></script>
+    <script src="genealogy.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="gestionList.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.min.js"></script>
+    <link rel="stylesheet" title="normal" href="syracuse.css"/>
+
+</head>
+
+
+<body onload="document.getElementById('mano').value=''">
+<div id="1">
+
+    <button id="parametre" onclick="onoffmenu()"> &#9881; </button>
+    <div id="menu">
+        <div id="submenu">
+        <button onclick="onoffanim()" id="offanim" > activé animation </button>
+        <button onclick="onoffanim()" id="onanim" > desactivé animation </button>
+
+        <p> </p>
+
+        <button onclick="onoffopelist()" id="onopelist"> affiché list d'operation</button>
+        <button onclick="onoffopelist()" id="offopelist"> desactivé list d'operation</button>
+            <p> </p>
+            <button onclick="onoffgnmenu()"> ghost number </button>
+        </div>
+    </div>
+
+    <div id="gn">
+        <div id="gnchild">
+        <p>ghost number</p>
+        <p> jusqu'a <input id="gna" value="">
+            <button onclick="studyto()"> go </button>
+        </p>
+        </div>
+    </div>
+
+    <button id="start" onclick="start()">active l'accroissement automatique </button>
+    <button id="stop"  onclick="stop()" >stop l'accroissement automatique </button>
+
+
+
+
+
+    <p>nombre que tu veut etudié
+        <button onclick="increase()"> + </button>
+        <input id="mano" value="">
+        <button onclick="decrease()"> - </button>
+        <button onclick="study()"> go </button> </p>
+
+
+
+     <p id="nbr"> nombre etudié : </p>
+
+    <p id="nmx"> nmax : </p>
+    <p id="opelist"> liste d'operation : </p>
+    <p id="flight"> temps de vol : </p>
+    <p id="longerFlight"> plus long vol : </p>
+    <p id="flyList"> []</p>
+
+
+</div>
+
+    <div id="graph"> <canvas id="myChart"></canvas> </div>
+
+
+<script>
+    const ctx = document.getElementById('myChart');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [1,2,3],
+            datasets: [{
+                label: ' ',
+                data: [0,0,0],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            animation: {
+                duration: 550
+            },
+            scales: {
+                y: {
+                    min:1
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'nombre parcouru pour :'
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

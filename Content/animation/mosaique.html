@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop</title>
+    <style>
+        * { padding: 0; margin-top: 10px; }
+        canvas { background: #eee; display: block; margin: 0 auto; border: 2px solid black;}
+        button{width: 150px}
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="800px" height="500px"></canvas>
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var ballRadius = 1;
+
+    var x = canvas.width-ballRadius;
+    var y = canvas.height-ballRadius;
+
+    var dx = 5;
+    var dy = -5;
+
+    var time = 0
+    var changeColorCAap = 100;
+
+    var posColor = 0 ;
+    var ListColor = ['black','grey'];
+
+
+    function drawBall() {
+
+        time = time + 1;
+document.getElementById("t").value = time;
+
+        ctx.beginPath();
+        ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+
+        if (time === changeColorCAap){
+            changeColorCAap = changeColorCAap + 100;
+            ctx.fillStyle = ListColor[posColor];
+            document.getElementById("c").style.backgroundColor = ListColor[posColor];
+            document.getElementById("cap").value = changeColorCAap;
+            if (posColor + 1 > 1){
+                posColor = 0;
+            } else posColor = posColor + 1;
+        }
+
+        ctx.fill();
+
+        ctx.closePath();
+
+    }
+
+    function draw() {
+
+        drawBall();
+
+        if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+            dx = -dx;
+        }
+        if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+            dy = -dy;
+        }
+
+        x += dx;
+        y += dy;
+    }
+
+    setInterval(draw, 0);
+
+
+</script>
+
+<input id="t" value="">
+<input id="c" style="background-color: white">
+<br/>
+<input id="cap" value="">
+
+</body>
+</html>

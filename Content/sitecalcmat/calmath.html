@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title> calcul de matrice </title>
+
+  <link rel="stylesheet" title="normal" href="calcmatStyle.css"/>
+
+  <script type="application/javascript" src="calcmatjs.js"> </script>
+  <script type="application/javascript" src="simplify.js"> </script>
+  <script type="application/javascript" src="changeLanguages.js"> </script>
+
+</head>
+
+<body>
+
+
+<div id="calcmath">
+
+<br/>
+  <div id="matB">
+
+
+    <input class="inpt" value=""><input class="inpt" value=""><input class="inpt" value=""><br/>
+    <mo style="padding-left: 1px;transform: scale(1.50757, 4.5);">(</mo>
+    <input class="inpt" value=""><input class="inpt" value=""><input class="inpt" value="">
+    <mo style="padding-left: 5px;transform: scale(1.50757, 4.5);">)</mo><br/>
+    <input class="inpt" value=""><input class="inpt" value=""><input class="inpt" value=""><br/>
+
+
+
+    <button onclick="erase('b')"> effacer B</button><br/>
+    <button onclick="identite('b')"> matrice Identité</button><br/>
+    <button onclick="aleatory('b')"> matrice aleatoire </button><br/>
+    <button onclick="multBy('b')"> multplié la matrice par </button> <input id="mB" value="1"> <br>
+    <button onclick="det('b')" > determinant</button><br>
+    <button onclick="transposate('b')"> transposer </button><br>
+    <button onclick="inveser('b')"> inverse </button>
+
+
+
+  </div>
+
+<div id="matA">
+
+
+
+
+  <input class="inpt" value=""><input class="inpt" value=""><input  class="inpt" value=""><br/>
+  <mo style="padding-left: 4px;transform: scale(1.50757, 4.5);">(</mo>
+  <input class="inpt" value=""><input class="inpt" value=""><input  class="inpt" value="">
+  <mo style="padding-left: 5px;transform: scale(1.50757, 4.5);">)</mo><br>
+  <input class="inpt" value=""><input class="inpt" value=""><input  class="inpt" value=""><br/>
+
+
+
+<button onclick="erase('a')"> effacer A</button><br/>
+  <button onclick="identite('a')"> matrice Identité</button> <br/>
+  <button onclick="aleatory('a')"> matrice aleatoire </button> <br/>
+  <button onclick="multBy('a')"> multplié la matrice par </button> <input id="mA" value="1"> <br/>
+  <button onclick="det('a')" > determinant</button> <br>
+  <button onclick="transposate('a')"> transposer </button><br>
+  <button onclick="inveser('a')"> inverse </button>
+
+
+
+</div>
+
+  <br/><br/><br/><br/>
+
+
+<div id="result">
+  <button onclick="AddOrMinus('+')"> A + B </button>
+  <button onclick="aleatory('a');aleatory('b');AddOrMinus('-')"> A + B aleatory</button><br/>
+
+  <button onclick="AddOrMinus('-')"> A - B </button>
+  <button onclick="aleatory('a');aleatory('b');AddOrMinus('-')"> A - B aleatory</button><br/>
+
+  <button onclick="mult()"> A x B </button>
+  <button onclick="aleatory('a');aleatory('b');mult()"> A * B aleatory</button><br/>
+
+  <button onclick="erase('a');erase('b');erase('r')"> tout effacer</button>
+
+  <p> resultat</p>
+<br>
+<input class="inpt" value="" readonly="readonly"><input class="inpt" value="" readonly="readonly"><input class="inpt" value="" readonly="readonly"><br/>
+  <mo style="padding-left: 4px;transform: scale(1.50757, 4.5);">(</mo>
+  <input class="inpt" value="" readonly="readonly"><input class="inpt" value="" readonly="readonly"><input class="inpt" value="" readonly="readonly">
+  <mo style="padding-left: 5px;transform: scale(1.50757, 4.5);">)</mo><br/>
+<input class="inpt" value="" readonly="readonly"><input class="inpt" value="" readonly="readonly"><input class="inpt" value="" readonly="readonly"><br/>
+<br>
+
+  <input style="width: 210px" id='resDet' value=""><br>
+  <p style="display: none"> determinant = 0, donc matrice non inversible </p>
+
+</div>
+<button onclick="language('fr')"> fr </button> <button onclick="language('en')"> en </button>
+<br>
+</div>
+<div id="matrice adition explain">
+
+</div>
+made by valumane (<a href="https://github.com/valumane">github.com/valumane</a>)
+</body>
+
+</html>
