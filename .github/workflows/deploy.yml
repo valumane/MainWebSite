@@ -1,4 +1,4 @@
-name: Deploy Vite to GitHub Pages
+name: Deploy Vite (React) to GitHub Pages
 
 on:
   push:
@@ -24,15 +24,24 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: mainwebsite-react/package-lock.json
 
-      - run: npm ci
-      
-      - run: npm run build
-      - run: touch dist/.nojekyll
+      - name: Install
+        working-directory: mainwebsite-react
+        run: npm ci
+
+      - name: Build
+        working-directory: mainwebsite-react
+        run: npm run build
+
+      - name: Disable Jekyll
+        run: touch mainwebsite-react/dist/.nojekyll
+
+      - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: mainwebsite-react/dist
 
   deploy:
     needs: build
