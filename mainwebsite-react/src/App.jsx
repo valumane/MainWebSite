@@ -18,7 +18,7 @@ export default function App() {
         <br />
 
         <li>
-          algorithmique programmation (ocaml)
+          algorithmique PROGRAAAAAAAA (ocaml)
           <ul><li>tetris : (L1 - 2020)</li></ul>
           <ul><li>analyse de mot de passe : (L2 - 2023)</li></ul>
         </li>
