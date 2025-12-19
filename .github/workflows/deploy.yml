@@ -24,24 +24,24 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: mainwebsite-react/package-lock.json
+          cache-dependency-path: src/package-lock.json
 
       - name: Install
-        working-directory: mainwebsite-react
+        working-directory: src
         run: npm ci
 
       - name: Build
-        working-directory: mainwebsite-react
+        working-directory: src
         run: npm run build
 
       - name: Disable Jekyll
-        run: touch mainwebsite-react/dist/.nojekyll
+        run: touch src/dist/.nojekyll
 
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: mainwebsite-react/dist
+          path: src/dist
 
   deploy:
     needs: build
