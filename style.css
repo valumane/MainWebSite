@@ -22,7 +22,7 @@
 }
 
 /* Liens / boutons */
-#navBar>div {
+#navBar>a {
     padding: 10px 14px;
     border-radius: 10px;
     cursor: pointer;
@@ -34,6 +34,25 @@
 #navBar>div:hover {
     background: rgba(255, 255, 255, 0.12);
 }
+
+
+
+#navBar a,
+#navBar a:visited {
+  color: #fff;            /* jamais violet */
+  text-decoration: none;  /* pas souligné */
+}
+
+/* hover/active comme tes div */
+#navBar a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+#navBar a:active {
+  background: rgba(255, 255, 255, 0.20);
+}
+
+
 
 
 :root {
