@@ -1,5 +1,41 @@
-body {
-    background: #2A7B9B;
-    background: linear-gradient(167deg, rgba(42, 123, 155, 1) 0%, rgba(129, 194, 72, 1) 39%, rgba(237, 221, 83, 1) 100%);
+/* Barre en haut */
+#navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    background: #111;
+    color: #fff;
+    z-index: 1000;
 }
 
+/* Liens / boutons */
+#navBar>div {
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
+
+}
+
+#navBar>div:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Pour éviter que le contenu passe sous la barre */
+body {
+    margin: 0;
+    padding-top: 56px;
+    /* même valeur que la hauteur de #navBar */
+   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
