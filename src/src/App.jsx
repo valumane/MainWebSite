@@ -6,54 +6,64 @@ export default function App() {
         <li>
           base de donnée
           <ul>
-            <li>
-              <a href="/Content/univ/bdd_spotifi.html">
-                gestion de spotifi (parodie de spotify)
-              </a>{" "}
-              : (L2 - 2023)
-            </li>
+
+            <a href="/Content/univ/bdd_spotifi.html">
+              gestion de spotifi (parodie de spotify)
+            </a>{" "}
+            : (L2 - 2023)
+
           </ul>
         </li>
 
         <br />
 
         <li>
-          algorithmique PROGRAAAAAAAA (ocaml)
-          <ul><li>tetris : (L1 - 2020)</li></ul>
-          <ul><li>analyse de mot de passe : (L2 - 2023)</li></ul>
+          algorithmique programmation (ocaml) :
+          <ul>tetris : (L1 - 2020)</ul>
+          <ul>analyse de mot de passe : (L2 - 2023)</ul>
         </li>
 
         <br />
 
         <li>
-          theorie du language (yacc/lex)
-          <ul><li>analyse preface d'un livre (L2 - 2022)</li></ul>
-          <ul><li>analyse de ticket de concert (L2 - 2023)</li></ul>
+          theorie du language (yacc/lex) :
+          <ul>analyse preface d'un livre (L2 - 2022)</ul>
+          <ul>analyse de ticket de concert (L2 - 2023)</ul>
         </li>
 
         <br />
 
-        <li>poo-ihm (java)</li>
-
         <li>
-          programmation c
-          <ul><li>clash royale : (L2 - 2022)</li></ul>
-          <ul><li>ligne de bus : (L2 - 2023)</li></ul>
+          poo-ihm (java) :
+          <ul>Dungeon Adventure : (l3 - 2025)</ul>
         </li>
 
+        <br />
+
         <li>
-          tech web
+          programmation c :
+          <ul>clash royale : (L2 - 2022)</ul>
+          <ul>ligne de bus : (L2 - 2023)</ul>
+          <ul>Nombre premier avec crible de hoare : (l3 - 2025)</ul>
+        </li>
+        <br />
+
+        <li>
+          tech web :
           <ul>
-            <li>
-              <a href="https://valumane.github.io/siteweb/index.html">
-                site web de presentation d'une collection
-              </a>{" "}
-              : (L1 - 2020)
-            </li>
+            <a href="https://valumane.github.io/siteweb/index.html">
+              site web de presentation d'une collection
+            </a>{" "}
+            : (L1 - 2020)
           </ul>
         </li>
 
-        <li>gestion de projet</li>
+        <br/>
+
+        <li>
+          gestion de projet :
+          <ul>solveur resolveur valideur grille sudoku : l3 (2025)</ul>
+        </li>
       </ul>
 
       <h1>index de mes projets personelle</h1>
