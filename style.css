@@ -29,11 +29,17 @@
 
 }
 
-#linkImg {
-    width: 40px;
+#link {
     position: fixed;
+    display: flex;
     left: 10px;
     top: 8px;
+    gap:5px
+
+}
+
+#linkImg {
+    width: 40px;
 }
 
 #navBar>div:hover {
@@ -84,7 +90,7 @@ body {
     margin-left: 30px;
 }
 
-#pres{
+#pres {
     color: #212c5e;
 }
 
