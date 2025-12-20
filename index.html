@@ -3,27 +3,25 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/src/assets/react.svg" />
+  <link rel="icon" type="image" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Baloo+2:wght@600;700;800&family=Fredoka:wght@500;600;700&display=swap"
-    rel="stylesheet">
-
   <title>main website</title>
 </head>
 
 <body>
   <div id="navBar">
-    <a class="navItem active" href="index.html">PAGE PRINCIPALE</a>
+    <a class="navItem" id="active" href="index.html">PAGE PRINCIPALE</a>
     <a class="navItem" href="Universitaire/univ.html">PROJET UNIVERSITAIRE</a>
     <a class="navItem" href="Personnelle/perso.html">PROJET PERSONNEL</a>
-
+    <div id="link">
+      <a class="navItem" href="https://github.com/valumane" target="_blank">
+        <img id="linkImg" src="githublogo.png">
+      </a>
+    </div>
   </div>
 
-  <div>
+  <div id="pres">
     <div id="presentation">
       Hi, i'm Lucas a student in computer science at "université de poitiers" 🇫🇷⚜️🐔<br>
       j'aime bien bidouillé des systemes et differents language de programmation, particulierement les languages low
@@ -42,7 +40,7 @@
     <div id="lang">
       <b class="title">Language :</b><br>
       francais : natif <br>
-      anglais : c1+ ( toeic )
+      anglais : B2+ ( toeic )
     </div>
     <br>
     <div id="machine">
@@ -51,16 +49,23 @@
     </div>
     <br>
     <div id="os">
-      <b class="title">systeme d'exploitation :</b><br>
-      Linux mint 22.1 cinnammon <br>
-      window 11 ( 24h2 🤮) <br>
+      <b class="title">systeme d'exploitation :</b>
+      <div class="grub">
+        <span class="grub-label">grub</span>
+        <div class="grub-list">
+          - Linux mint 22.1 cinnamon<br>
+          - Windows 11 (24h2 🤮)
+        </div>
+      </div>
     </div>
+
     <br>
     <div id="stacl">
       <b class="title">stack : </b><br>
       language : c - java - ocaml - php - sql <br>
       web : html/css/js - vue - react - angular - node <br>
       scripting : vba, batch, shell, bash <br>
+      other : lex/yacc - git - gitlab - git action - ci/cd - LaTex
     </div>
 
   </div>

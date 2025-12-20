@@ -14,14 +14,12 @@
     box-sizing: border-box;
 
     background: #111;
-    color: #fff;
     z-index: 1000;
 
     font-weight: 800;
     letter-spacing: -0.01em;
 }
 
-/* Liens / boutons */
 #navBar>a {
     padding: 10px 14px;
     border-radius: 10px;
@@ -29,6 +27,13 @@
     user-select: none;
     transition: background 0.2s ease;
 
+}
+
+#linkImg {
+    width: 40px;
+    position: fixed;
+    left: 10px;
+    top: 8px;
 }
 
 #navBar>div:hover {
@@ -39,38 +44,81 @@
 
 #navBar a,
 #navBar a:visited {
-  color: #fff;            /* jamais violet */
-  text-decoration: none;  /* pas souligné */
+    color: #fff;
+    /* jamais violet */
+    text-decoration: none;
+    /* pas souligné */
 }
 
-/* hover/active comme tes div */
 #navBar a:hover {
-  background: rgba(255, 255, 255, 0.12);
+    background: rgba(185, 31, 31, 0.468);
 }
 
-#navBar a:active {
-  background: rgba(255, 255, 255, 0.20);
+#active {
+    background: rgba(185, 31, 31, 0.468);
 }
-
-
 
 
 :root {
     --ui-font: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-/* Pour éviter que le contenu passe sous la barre */
 body {
     margin: 0;
     padding-top: 56px;
     font-family: "Rubik", system-ui, sans-serif;
+    font-size: larger;
 }
 
-/* Tu peux zapper en changeant la classe du body */
-body.font-nunito {
-    --ui-font1: "Nunito", system-ui, sans-serif;
-}
 
-.class{
+.class {
     font-weight: 700;
+}
+
+#pres div {
+    width: fit-content;
+}
+
+#pres {
+    padding-top: 20px;
+    margin-left: 30px;
+}
+
+#pres{
+    color: #212c5e;
+}
+
+
+#pres .title {
+    color: #b10707;
+    margin-left: -10px;
+}
+
+
+.grub {
+    display: flex;
+    gap: 10px;
+}
+
+.grub-label {
+    margin-top: 8px;
+}
+
+.grub-list {
+    position: relative;
+    padding-left: 18px;
+}
+
+/* L'accolade */
+.grub-list::before {
+    content: "{";
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+
+    /* “grossir” l’accolade */
+    font-size: 2.6rem;
+
+    /* l’étirer en hauteur pour couvrir les 2 lignes */
+    transform: scaleY(1.0);
 }
