@@ -40,7 +40,7 @@ a:active {
    font-family: "Rubik", system-ui, sans-serif;
 }
 
-#sujet {
+.buttonShowPdf {
    cursor: pointer;
    border: 2px solid rgb(174, 168, 168);
    border-color: rgba(185, 31, 31, 0.165);
@@ -50,7 +50,7 @@ a:active {
    padding-right: 5px;
 }
 
-#sujet:hover {
+.buttonShowPdf:hover {
    background-color: rgba(185, 31, 31, 0.468);
    /* ajoute une transition douce */
    transition: background-color 0.3s ease;
@@ -131,14 +131,23 @@ a:active {
    color: #008000;
    font-weight: bold;
 }
-.white{
-   color:#BBB;
+
+.white {
+   color: #BBB;
 }
-.background{
+
+.background {
    background: #f8f8f8;
-   overflow:auto;
-   width:auto;
-   border:solid gray;
-   border-width:.1em .1em .1em .8em;
-   padding:.2em .6em;
+   overflow: auto;
+   width: auto;
+   border: solid gray;
+   border-width: .1em .1em .1em .8em;
+   padding: .2em .6em;
+}
+
+
+.jalon {
+   display: none;
+   width: 45vw;
+   height: 60vh;
 }

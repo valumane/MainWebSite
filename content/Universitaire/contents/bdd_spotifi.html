@@ -33,10 +33,10 @@
     <div id="pres">
         <div>
             <b class="title">presentation</b>
-            <iframe id="pdfFrame" src="../assets/Projet Spotifi gr 3a 3b 1a enseignant Y Dégardin.pdf">
+            <iframe id="pdfFrame" src="../assets/bdd/Projet Spotifi gr 3a 3b 1a enseignant Y Dégardin.pdf">
             </iframe>
             <div>
-                <div id="sujet" onclick="toggle('sujet','pdfFrame')">sujet (afficher)</div>
+                <div class="buttonShowPdf" onclick="toggle('pdfFrame')">sujet (afficher)</div>
                 Le projet Spotifi est un projet de base de donnée en groupe de 2 ou 3. <br>
                 Le but est de créer une base de donnée pour une plateforme de streaming musical. <br>
                 Le projet est divisé en plusieurs parties : <br>
@@ -49,7 +49,7 @@
         <br>
         <div>
             <b class="title"> consigne </b>
-            <div> Utilisé uniquement Microsoft Access</div> 
+            <div> Utilisé uniquement Microsoft Access</div>
         </div>
 
         <br>
@@ -254,7 +254,19 @@ DATEADD<span class="green"> </span>(<span class="green"> </span><span style="col
         <div>
             <b class="title"> conclusion </b>
             <div>
-                note obtenue pour ce projet : 19/20
+                note obtenue pour ce projet : 19/20<br>
+                <a class="buttonShowPdf" href="../assets/bdd/Base De Données Spotifi.accdb"
+                    download="Base_De_Donnees_Spotifi.accdb">Télécharger la base de données ( Microsoft Access ) </a>
+                <br>
+                <div style="display: flex; gap: 20px;">
+                    <div class="buttonShowPdf" onclick="toggle('j1')"> affiché jalon 1 </div>
+                    <div class="buttonShowPdf" onclick="toggle('j2')"> affiché jalon 2 </div>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <iframe class="jalon" id="j1" src="../assets/bdd/jalon 1.pdf"></iframe>
+                    <iframe class="jalon" id="j2" src="../assets/bdd/Jalon2.pdf"></iframe>
+                </div>
+
             </div><br><br>
         </div>
 
