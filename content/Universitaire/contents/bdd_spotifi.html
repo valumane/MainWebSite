@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page HTML de départ">
+    <title>projet spotifi</title>
+    <link rel="stylesheet" href="../../../assets/style.css">
+    <link rel="stylesheet" href="../styleUniv.css">
+    <script src="../assets/toggle.js"></script>
+
+
+
+</head>
+
+<body>
+    <div id="navBar">
+        <a class="navItem" href="../../../index.html">PAGE PRINCIPALE</a>
+        <a class="navItem" href="../univ.html">PROJET UNIVERSITAIRE</a>
+        <a class="navItem" href="../../Personnelle/perso.html">PROJET PERSONNEL</a>
+        <div id="link">
+            <a class="navItem" href="https://github.com/valumane" target="_blank">
+                <img id="linkImg" src="../../../assets/githublogo.png"></a>
+            <a class="navItem" href="https://myanimelist.net/profile/valuman" target="_blank">
+                <img id="linkImg" src="../../../assets/myAlist.png"></a>
+            <a class="navItem" href="https://letterboxd.com/valuman/" target="_blank">
+                <img id="linkImg" src="../../../assets/letterboxd.png"></a>
+        </div>
+    </div>
+    <div id="section" class="active"> projet spotifi</div>
+
+    <div id="pres">
+        <div>
+            <b class="title">presentation</b>
+            <iframe id="pdfFrame" src="../assets/Projet Spotifi gr 3a 3b 1a enseignant Y Dégardin.pdf">
+            </iframe>
+            <div>
+                <div id="sujet" onclick="toggle('sujet','pdfFrame')">sujet (afficher)</div>
+                Le projet Spotifi est un projet de base de donnée en groupe de 2 ou 3. <br>
+                Le but est de créer une base de donnée pour une plateforme de streaming musical. <br>
+                Le projet est divisé en plusieurs parties : <br>
+                la conception de la base de donnée, <br>
+                la création des tables, <br>
+                l'insertion des données, <br>
+                la création de formulaires et d'états. <br>
+            </div>
+        </div>
+        <br>
+        <div>
+            <b class="title"> consigne </b>
+            <div> Utilisé uniquement Microsoft Access</div> 
+        </div>
+
+        <br>
+        <div>
+            <b class="title"> Schema entité association et Schema relationelle </b>
+            <img id="sr" src="../assets/sr.png" alt="Schema relationelle">
+            <img id="sea" src="../assets/sea.png" alt="Schema entité association">
+        </div>
+        <br>
+        <div>
+            <b class="title"> tables </b><br>
+            <img id="table" src="../assets/table.png" alt="tables">
+        </div>
+        <br>
+        <div>
+            <b class="title"> sql </b>
+            <div class="req"> Combien de titres et de genres sont disponibles dans la base ? </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span><span class="green">COUNT</span><span class="green"> </span>(<span style="color: #666">*</span>)<span class="green"> </span><span class="green">AS</span><span class="green"> </span>NbTitres<span class="green"> </span><span class="green">FROM</span><span class="green"> </span>Titres
+<span class="green">UNION</span>
+<span >SELECT</span><span class="white"> </span><span class="green">COUNT</span><span class="green"> </span>(<span style="color: #666">*</span>)<span class="green"> </span><span class="green">AS</span><span class="green"> </span>NbGenres<span class="green"> </span><span class="green">FROM</span><span class="green"> </span>GenreMusical<span class="green"> </span>;
+</pre>
+            </div>
+            <div class="req"> Combien de Titres M. Dupond a-t-il écouté ? </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span><span class="green">COUNT</span><span class="green"> </span>(<span style="color: #666">*</span>)<span class="green"> </span><span class="green">AS</span><span class="green"> </span>NbrTitreEcoute
+<span class="green">FROM</span><span class="green"> </span>Ecoute
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Utilisateurs<span class="green"> </span><span class="green">ON</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.
+idUtilisateur
+<span class="green">WHERE</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>Nom<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span><span style="color: #19177C">&quot; Dupond &quot;</span><span class="green"> </span>;
+</pre>
+            </div>
+            <div class="req"> Quel est le genre musical le plus écouté par M. Dupond ?</div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span>GenreMusical<span class="green"> </span>.<span class="green"> </span>Nom
+<span class="green">FROM</span><span class="green"> </span>Utilisateurs
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>(<span class="green"> </span>GenreMusical
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>(<span class="green"> </span>Ecoute
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Titres<span class="green"> </span><span class="green">ON</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Titres<span class="green"> </span>.
+idTitre<span class="green"> </span>)
+<span class="green">ON</span><span class="green"> </span>GenreMusical<span class="green"> </span>.<span class="green"> </span>idGenre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>idGenre<span class="green"> </span>)
+<span class="green">ON</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idUtilisateur
+<span class="green">WHERE</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>Nom<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span><span style="color: #19177C">&quot; Dupond &quot;</span>
+</pre>
+            </div>
+            <div class="req"> Quelle est la durée moyenne d’écoute des morceaux ? </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span>T<span class="green"> </span>.<span class="green"> </span>Nom
+<span class="green">FROM</span><span class="green"> </span>Ecoute<span class="green"> </span><span class="green">AS</span><span class="green"> </span>E
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Titres<span class="green"> </span><span class="green">AS</span><span class="green"> </span>T<span class="green"> </span><span class="green">ON</span><span class="green"> </span>E<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>T<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span>;
+</pre>
+            </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span>T<span class="green"> </span>.<span class="green"> </span>Nom<span class="green"> </span>,<span class="green"> </span><span class="green">AVG</span><span class="green"> </span>(<span class="green"> </span>E<span class="green"> </span>.<span class="green"> </span>DureeEcoute<span class="green"> </span><span style="color: #666">/</span><span class="green"> </span>T<span class="green"> </span>.<span class="green"> </span>Duree<span class="green"> </span><span style="color: #666">*</span><span class="green"> </span><span style="color: #666">100</span>)<span class="green"> </span><span class="green">AS</span><span class="green"> </span>Ratio
+<span class="green">FROM</span><span class="green"> </span>Ecoute<span class="green"> </span><span class="green">AS</span><span class="green"> </span>E
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Titres<span class="green"> </span><span class="green">AS</span><span class="green"> </span>T<span class="green"> </span><span class="green">ON</span><span class="green"> </span>E<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>T<span class="green"> </span>.<span class="green"> </span>idTitre
+<span class="green">GROUP</span><span class="green"> </span><span class="green">BY</span><span class="green"> </span>T<span class="green"> </span>.<span class="green"> </span>Nom<span class="green"> </span>;
+</pre>
+            </div>
+
+            <div class="req"> Nombre de personnes maximum liées à
+                un même contrat ayant écouté de la musique le même
+                jour ? </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>DateEcoute<span class="green"> </span>,<span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>idContrat<span class="green"> </span>,<span class="green"> </span><span class="green">COUNT</span><span class="green"> </span>(<span class="green"> </span>Utilisateurs<span class="green"> </span>.
+idUtilisateur<span class="green"> </span>)<span class="green"> </span><span class="green">AS</span><span class="green"> </span>NombrePersonnes
+<span class="green">FROM</span><span class="green"> </span>Utilisateurs
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Ecoute<span class="green"> </span><span class="green">ON</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idUtilisateur
+<span class="green">GROUP</span><span class="green"> </span><span class="green">BY</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>DateEcoute<span class="green"> </span>,<span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>idContrat<span class="green"> </span>;
+</pre>
+            </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span><span class="green">MAX</span><span class="green"> </span>(<span class="green"> </span>SousRequete<span class="green"> </span>.<span class="green"> </span>NombrePersonnes<span class="green"> </span>)
+<span class="green">FROM</span><span class="green"> </span>(
+<span style="color: #3D7B7B; font-style: italic">-- Sous - requete 1</span>
+)<span class="green"> </span><span class="green">AS</span><span class="green"> </span>SousRequete<span class="green"> </span>;
+</pre>
+            </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span>MaxContrat<span class="green"> </span>.<span class="green"> </span>DateEcoute<span class="green"> </span>,<span class="green"> </span>MaxContrat<span class="green"> </span>.<span class="green"> </span>idContrat<span class="green"> </span>,<span class="green"> </span>MaxContrat<span class="green"> </span>.
+NombrePersonnes
+<span class="green">FROM</span><span class="green"> </span>(
+<span style="color: #3D7B7B; font-style: italic">-- sous - requete 1</span>
+)<span class="green"> </span><span class="green">AS</span><span class="green"> </span>MaxContrat
+<span class="green">WHERE</span><span class="green"> </span>MaxContrat<span class="green"> </span>.<span class="green"> </span>NombrePersonnes<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>(
+<span style="color: #3D7B7B; font-style: italic">-- sous - requete 2</span>
+<span class="green">WHERE</span><span class="green"> </span>SousRequete<span class="green"> </span>.<span class="green"> </span>idContrat<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>MaxContrat<span class="green"> </span>.<span class="green"> </span>idContrat
+)
+<span class="green">ORDER</span><span class="green"> </span><span class="green">BY</span><span class="green"> </span>MaxContrat<span class="green"> </span>.<span class="green"> </span>idContrat<span class="green"> </span>;
+</pre>
+            </div>
+
+            <div class="req"> Nombre de fois où des personnes liées à un
+                même contrat ont écouté de la musique simultanément
+                le 14/10/2024 ? </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span><span style="color: #666">1</span>
+<span class="green">FROM</span><span class="green"> </span>Ecoute<span class="green"> </span><span class="green">AS</span><span class="green"> </span>E2
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Utilisateurs<span class="green"> </span><span class="green">AS</span><span class="green"> </span>U2<span class="green"> </span><span class="green">ON</span><span class="green"> </span>E2<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>U2<span class="green"> </span>.<span class="green"> </span>idUtilisateur
+<span class="green">WHERE</span><span class="green"> </span>E2<span class="green"> </span>.<span class="green"> </span>DateEcoute<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span><span style="color: #666">#10/14/2024#</span>
+<span class="green">AND</span><span class="green"> </span>U2<span class="green"> </span>.<span class="green"> </span>idContrat<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>U1<span class="green"> </span>.<span class="green"> </span>idContrat
+<span class="green">AND</span><span class="green"> </span>E2<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span><span style="color: #666">&lt;&gt;</span><span class="green"> </span>E1<span class="green"> </span>.<span class="green"> </span>idUtilisateur
+<span class="green">AND</span><span class="green"> </span>(
+(<span class="green"> </span>E1<span class="green"> </span>.<span class="green"> </span>DateEcoute<span class="green"> </span><span style="color: #666">&lt;=</span><span class="green"> </span>DATEADD<span class="green"> </span>(<span class="green"> </span><span style="color: #19177C">&quot; s &quot;</span><span class="green"> </span>,<span class="green"> </span>TIMEVALUE<span class="green"> </span>(<span class="green"> </span>E2<span class="green"> </span>.<span class="green"> </span>D<span class="green"> </span>u<span class="green"> </span>r<span class="green"> </span>e<span class="green"> </span>E<span class="green"> </span><span class="green">c</span><span class="green"> </span>o<span class="green"> </span>u<span class="green"> </span>t<span class="green"> </span>e<span class="green"> </span>)<span class="green"> </span>,<span class="green"> </span>E2<span class="green"> </span>.
+DateEcoute<span class="green"> </span>)<span class="green"> </span>)
+<span class="green">AND</span><span class="green"> </span>(<span class="green"> </span>DATEADD<span class="green"> </span>(<span class="green"> </span><span style="color: #19177C">&quot; s &quot;</span><span class="green"> </span>,<span class="green"> </span>TIMEVALUE<span class="green"> </span>(<span class="green"> </span>E1<span class="green"> </span>.<span class="green"> </span>D<span class="green"> </span>u<span class="green"> </span>r<span class="green"> </span>e<span class="green"> </span>E<span class="green"> </span><span class="green">c</span><span class="green"> </span>o<span class="green"> </span>u<span class="green"> </span>t<span class="green"> </span>e<span class="green"> </span>)<span class="green"> </span>,<span class="green"> </span>E1<span class="green"> </span>.<span class="green"> </span>DateEcoute<span class="green"> </span>)<span class="green"> </span><span style="color: #666">&gt;=</span>
+E2<span class="green"> </span>.<span class="green"> </span>DateEcoute<span class="green"> </span>)
+)
+</pre>
+            </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span><span class="green">DISTINCT</span><span class="green"> </span>E1<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span>,<span class="green"> </span>U1<span class="green"> </span>.<span class="green"> </span>idContrat
+<span class="green">FROM</span><span class="green"> </span>Ecoute<span class="green"> </span><span class="green">AS</span><span class="green"> </span>E1
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Utilisateurs<span class="green"> </span><span class="green">AS</span><span class="green"> </span>U1<span class="green"> </span><span class="green">ON</span><span class="green"> </span>E1<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>U1<span class="green"> </span>.<span class="green"> </span>idUtilisateur
+<span class="green">WHERE</span><span class="green"> </span>E1<span class="green"> </span>.<span class="green"> </span>DateEcoute<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span><span style="color: #666">#10/14/2024#</span>;
+</pre>
+            </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span>idContrat<span class="green"> </span>,<span class="green"> </span><span class="green">COUNT</span><span class="green"> </span>(<span style="color: #666">*</span>)<span class="green"> </span><span class="green">AS</span><span class="green"> </span>NombrePersonnes
+<span class="green">FROM</span><span class="green"> </span>(
+sous<span class="green"> </span><span style="color: #666">-</span><span class="green"> </span>requete<span class="green"> </span><span style="color: #666">2</span>
+<span class="green">AND</span><span class="green"> </span><span class="green">EXISTS</span><span class="green"> </span>(
+sous<span class="green"> </span><span style="color: #666">-</span><span class="green"> </span>requete<span class="green"> </span><span style="color: #666">1</span>
+)
+)<span class="green"> </span><span class="green">AS</span><span class="green"> </span>SousRequete
+<span class="green">GROUP</span><span class="green"> </span><span class="green">BY</span><span class="green"> </span>idContrat<span class="green"> </span>;
+</pre>
+            </div>
+
+
+            <div class="req"> Playlist de M. Dupond </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>Nom
+<span class="green">FROM</span><span class="green"> </span>Titres
+<span class="green">WHERE</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>idGenre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>(
+<span style="color: #3D7B7B; font-style: italic">-- Sous - requete pour le genre le plus ecoute</span>
+)
+<span class="green">AND</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span><span class="green">NOT</span><span class="green"> </span><span class="green">IN</span><span class="green"> </span>(
+<span style="color: #3D7B7B; font-style: italic">-- Titres ecoutes par M . Dupond</span>
+);
+</pre>
+            </div>
+
+
+            <div class="req"> Playlist basée sur le genre le plus écouté de M. Dupond</div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span><span class="green">DISTINCT</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>Nom
+<span class="green">FROM</span><span class="green"> </span>Utilisateurs<span class="green"> </span><span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>(<span class="green"> </span>Titres<span class="green"> </span><span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Ecoute<span class="green"> </span><span class="green">ON</span><span class="green"> </span>Titres<span class="green"> </span>.
+idTitre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span>)
+<span class="green">ON</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idUtilisateur
+<span class="green">WHERE</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>idGenre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>(
+<span style="color: #3D7B7B; font-style: italic">-- Requete pour le genre le plus ecoute</span>
+)
+<span class="green">AND</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>Nom<span class="green"> </span><span style="color: #666">&lt;&gt;</span><span class="green"> </span><span style="color: #19177C">&quot; Dupond &quot;</span><span class="green"> </span>;
+</pre>
+            </div>
+            <div class="req"> crée une playlist pour M. Dupond en se basant sur les titres les plus écoutés par tous les
+                utilisateurs ayant un écart d’âge de plus ou moins 5 ans </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>Nom
+<span class="green">FROM</span><span class="green"> </span>Titres<span class="green"> </span><span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>(<span class="green"> </span>Utilisateurs<span class="green"> </span><span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Ecoute<span class="green"> </span><span class="green">ON</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.
+idUtilisateur<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span>)
+<span class="green">ON</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span>;
+</pre>
+            </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span><span class="green">DISTINCT</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>Nom
+<span class="green">FROM</span><span class="green"> </span>Titres
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>(<span class="green"> </span>Utilisateurs<span class="green"> </span><span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Ecoute<span class="green"> </span><span class="green">ON</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.
+idUtilisateur<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span>)
+<span class="green">ON</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idTitre
+<span class="green">WHERE</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>DateNaissance<span class="green"> </span><span class="green">BETWEEN</span>
+DATEADD<span class="green"> </span>(<span class="green"> </span><span style="color: #19177C">&quot; yyyy &quot;</span><span class="green"> </span>,<span class="green"> </span><span style="color: #666">-5</span><span class="green"> </span>,<span class="green"> </span>(<span class="green"> </span><span class="green">SELECT</span><span class="green"> </span>DateNaissance<span class="green"> </span><span class="green">FROM</span><span class="green"> </span>Utilisateurs<span class="green"> </span><span class="green">WHERE</span><span class="green"> </span>Nom
+<span style="color: #666">=</span><span class="green"> </span><span style="color: #19177C">&quot; Dupond &quot;</span><span class="green"> </span>)<span class="green"> </span>)
+<span class="green">AND</span><span class="green"> </span>DATEADD<span class="green"> </span>(<span class="green"> </span><span style="color: #19177C">&quot; yyyy &quot;</span><span class="green"> </span>,<span class="green"> </span><span style="color: #666">5</span>
+</pre>
+            </div>
+
+            <div class="req"> Playlist basée sur les genres écoutés par M. Dupond </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span><span class="green">DISTINCT</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>idGenre
+<span class="green">FROM</span><span class="green"> </span>Utilisateurs
+<span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>(<span class="green"> </span>Titres<span class="green"> </span><span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Ecoute<span class="green"> </span><span class="green">ON</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idTitre
+)<span class="green"> </span><span class="green">ON</span><span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>idUtilisateur<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idUtilisateur
+<span class="green">WHERE</span><span class="green"> </span>(((<span class="green"> </span>Utilisateurs<span class="green"> </span>.<span class="green"> </span>Nom<span class="green"> </span>)<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span><span style="color: #19177C">&quot; Dupond &quot;</span><span class="green"> </span><span class="green">And</span><span class="green"> </span>[<span class="green"> </span>Ecoute<span class="green"> </span>].[<span class="green"> </span>DureeEcoute<span class="green"> </span>]<span class="green"> </span><span style="color: #666">&lt;</span>[<span class="green"> </span>Titres
+].[<span class="green"> </span>Duree<span class="green"> </span>])<span class="green"> </span>)
+</pre>
+            </div>
+            <div class="background">
+                <pre style="margin: 0; line-height: 125%;"><span></span><span class="green">SELECT</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>Nom<span class="green"> </span>,<span class="green"> </span><span class="green">COUNT</span><span class="green"> </span>(<span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span>)<span class="green"> </span><span class="green">AS</span><span class="green"> </span>NombreEcoutes
+<span class="green">FROM</span><span class="green"> </span>Titres<span class="green"> </span><span class="green">INNER</span><span class="green"> </span><span class="green">JOIN</span><span class="green"> </span>Ecoute<span class="green"> </span><span class="green">ON</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>idTitre<span class="green"> </span><span style="color: #666">=</span><span class="green"> </span>Ecoute<span class="green"> </span>.<span class="green"> </span>idTitre
+<span class="green">WHERE</span><span class="green"> </span>Titres<span class="green"> </span>.<span class="green"> </span>idGenre<span class="green"> </span><span class="green">NOT</span><span class="green"> </span><span class="green">IN</span><span class="green"> </span>(
+<span style="color: #3D7B7B; font-style: italic">-- Genres ecoute partiellement par M . Dupond</span>
+)
+</pre>
+            </div>
+
+
+        </div>
+        <br>
+
+        <div>
+            <b class="title"> conclusion </b>
+            <div>
+                note obtenue pour ce projet : 19/20
+            </div><br><br>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

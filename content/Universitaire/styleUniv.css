@@ -1,0 +1,144 @@
+#univ {
+   background-color: rgba(76, 78, 76, 0.624);
+}
+
+
+
+/* Liens : même couleur même après visite */
+a:link,
+a:visited {
+   color: inherit;
+   /* ou mets une couleur fixe: #fff, #ddd, etc */
+   text-decoration: none;
+   /* optionnel */
+}
+
+/* Optionnel : effet au survol */
+a:hover,
+a:active {
+   text-decoration: underline;
+   /* ou autre */
+}
+
+/* ----------------- */
+/* centré #section */
+#section {
+   background: #111;
+   margin-left: auto;
+   margin-right: auto;
+   width: fit-content;
+   /* couleur de police en blanc*/
+   color: white;
+   padding-left: 10px;
+   padding-right: 10px;
+   padding-bottom: 5px;
+   /* bordure radius juste corner bas droit et bas gauche*/
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   font-weight: 800;
+   letter-spacing: -0.01em;
+   font-family: "Rubik", system-ui, sans-serif;
+}
+
+#sujet {
+   cursor: pointer;
+   border: 2px solid rgb(174, 168, 168);
+   border-color: rgba(185, 31, 31, 0.165);
+   border-radius: 30px;
+   margin-left: -5px;
+   padding-left: 5px;
+   padding-right: 5px;
+}
+
+#sujet:hover {
+   background-color: rgba(185, 31, 31, 0.468);
+   /* ajoute une transition douce */
+   transition: background-color 0.3s ease;
+   border-radius: 30px;
+   padding-left: 5px;
+   padding-right: 5px;
+}
+
+
+#pdfFrame {
+   display: none;
+   position: absolute;
+   top: 50px;
+   right: 0;
+   /* conseille aussi une taille sinon c’est bizarre */
+   width: 600px;
+   height: 500px;
+}
+
+
+
+/* 2) Layout en 2 colonnes : texte à gauche, pdf à droite */
+/*#pres>div {
+   border: 2px red solid;
+
+   display: grid;
+   grid-template-columns: 1fr min(45vw, 720px);
+   grid-template-rows: auto auto;
+   column-gap: 16px;
+   align-items: start;
+
+   width: 100%;
+   box-sizing: border-box;
+}
+
+/* Place les éléments dans la grille */
+/*#pres>div>b.title {
+   grid-column: 1;
+   grid-row: 1;
+}
+
+#pres>div>#sujet {
+   grid-column: 1;
+   grid-row: 2;
+}
+
+#pres>div>iframe {
+   border: thick green solid;
+
+   grid-column: 2;
+   grid-row: 1 / span 2;
+   justify-self: end;
+   
+   width: 100%;
+   height: 80vh;
+   /* ajuste si tu veux */
+/*} */
+
+
+#sr,
+#sea,
+#table {
+   width: 80%;
+   border: 2px solid rgb(174, 168, 168);
+   border-color: rgba(185, 31, 31, 0.165);
+   border-radius: 10px;
+}
+
+.req {
+   font-weight: bold;
+   padding: 5px 10px;
+   border-radius: 5px;
+}
+
+
+/* couleur requets */
+.green {
+   color: #008000;
+   font-weight: bold;
+}
+.white{
+   color:#BBB;
+}
+.background{
+   background: #f8f8f8;
+   overflow:auto;
+   width:auto;
+   border:solid gray;
+   border-width:.1em .1em .1em .8em;
+   padding:.2em .6em;
+}

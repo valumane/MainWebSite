@@ -1,7 +1,0 @@
-#univ {
-   background-color: rgba(76, 78, 76, 0.624);
-}
-
-#pres div>div:not(:has(> b.title)) {
-   cursor: pointer;
-}
