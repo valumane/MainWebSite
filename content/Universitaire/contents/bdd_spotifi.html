@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page HTML de départ">
+    <title>projet spotifi</title>
+    <link rel="stylesheet" href="../../../assets/style.css">
+    <link rel="stylesheet" href="../styleUniv.css">
+    <script src="../assets/toggle.js"></script>
+    <script src="../assets/bdd/displayRequete.js"></script>
+
+
+</head>
+
+<body onload="displayAll()">
+    <div id="navBar">
+        <a class="navItem" href="../../../index.html">PAGE PRINCIPALE</a>
+        <a class="navItem" href="../univ.html">PROJET UNIVERSITAIRE</a>
+        <a class="navItem" href="../../Personnelle/perso.html">PROJET PERSONNEL</a>
+        <div id="link">
+            <a class="navItem" href="https://github.com/valumane" target="_blank">
+                <img id="linkImg" src="../../../assets/githublogo.png"></a>
+            <a class="navItem" href="https://myanimelist.net/profile/valuman" target="_blank">
+                <img id="linkImg" src="../../../assets/myAlist.png"></a>
+            <a class="navItem" href="https://letterboxd.com/valuman/" target="_blank">
+                <img id="linkImg" src="../../../assets/letterboxd.png"></a>
+        </div>
+    </div>
+    <div id="section" class="active"> projet spotifi</div>
+
+    <div id="pres">
+        <div>
+            <b class="title">presentation</b>
+            <iframe id="pdfFrame" src="../assets/bdd/Projet Spotifi gr 3a 3b 1a enseignant Y Dégardin.pdf">
+            </iframe>
+            <div>
+                <div class="buttonShowPdf" onclick="toggle('pdfFrame')">sujet (afficher)</div>
+                Le projet Spotifi est un projet de base de donnée en groupe de 2 ou 3. <br>
+                Le but est de créer une base de donnée pour une plateforme de streaming musical. <br>
+                Le projet est divisé en plusieurs parties : <br>
+                la conception de la base de donnée, <br>
+                la création des tables, <br>
+                l'insertion des données, <br>
+                la création de formulaires et d'états. <br>
+            </div>
+        </div>
+        <br>
+        <div>
+            <b class="title"> consigne </b>
+            <div> Utilisé uniquement Microsoft Access</div>
+        </div>
+
+        <br>
+        <div>
+            <b class="title"> Schema entité association et Schema relationelle </b>
+            <img id="sr" src="../assets/bdd/sr.png" alt="Schema relationelle">
+            <img id="sea" src="../assets/bdd/sea.png" alt="Schema entité association">
+        </div>
+        <br>
+        <div>
+            <b class="title"> tables </b><br>
+            <img id="table" src="../assets/bdd/table.png" alt="tables">
+        </div>
+        <br>
+        <b class="title"> sql </b>
+        <div>
+            <div class="req"> 1- Combien de titres et de genres sont disponibles dans la base ? </div>
+            <div id="r1" class="background"></div>
+
+            <div class="req"> 2- Combien de Titres M. Dupond a-t-il écouté ? </div>
+            <div class="background" id="r2"></div>
+
+            <div class="req"> 3- Quel est le genre musical le plus écouté par M. Dupond ?</div>
+            <div class="background" id="r3"></div>
+
+            <div class="req"> 4- Quelle est la durée moyenne d’écoute des morceaux ? </div>
+            <div class="background" id="r4_1"></div>
+            <div class="background" id="r4_2"></div>
+
+
+            <div class="req"> 5- Nombre de personnes maximum liées à un même contrat ayant écouté de la musique le même
+                jour
+                ? </div>
+            <div class="background" id="r5_1"></div>
+            <div class="background" id="r5_2"></div>
+            <div class="background" id="r5_3"></div>
+
+            <div class="req"> 6- Nombre de fois où des personnes liées à un même contrat ont écouté de la musique
+                simultanément le 14/10/2024 ? </div>
+            <div class="background" id="r6_1"></div>
+            <div class="background" id="r6_2"></div>
+            <div class="background" id="r6_3"></div>
+
+
+            <div class="req"> 7- Playlist de M. Dupond </div>
+            <div class="background" id="r7"></div>
+
+
+            <div class="req"> 8- Playlist basée sur le genre le plus écouté de M. Dupond</div>
+            <div class="background" id="r8"></div>
+
+            <div class="req"> 9- crée une playlist pour M. Dupond en se basant sur les titres les plus écoutés par tous
+                les
+                utilisateurs ayant un écart d’âge de plus ou moins 5 ans </div>
+            <div class="background" id="r9_1"></div>
+            <div class="background" id="r9_2"></div>
+
+            <div class="req"> 10- Playlist basée sur les genres écoutés par M. Dupond </div>
+            <div class="background" id="r10_1"></div>
+            <div class="background" id="r10_2"></div>
+        </div>
+        <br>
+
+        <div>
+            <b class="title"> conclusion </b>
+            <div>
+                note obtenue pour ce projet : 19/20<br>
+                <a class="buttonShowPdf" href="../assets/bdd/Base De Données Spotifi.accdb"
+                    download="Base_De_Donnees_Spotifi.accdb">Télécharger la base de données ( Microsoft Access ) </a>
+                <br>
+                <div style="display: flex; gap: 20px;">
+                    <div class="buttonShowPdf" onclick="toggle('j1')"> affiché jalon 1 </div>
+                    <div class="buttonShowPdf" onclick="toggle('j2')"> affiché jalon 2 </div>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <iframe class="jalon" id="j1" src="../assets/bdd/jalon 1.pdf"></iframe>
+                    <iframe class="jalon" id="j2" src="../assets/bdd/Jalon2.pdf"></iframe>
+                </div>
+
+            </div><br><br>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
